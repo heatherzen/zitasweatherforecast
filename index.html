@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Staatliches&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Document</title>
+</head>
+<body>
+    <!--header title-->
+    
+    <header class="weather-title">
+        <h1>Weather Dashboard</h1>
+    </header>
+
+    <!-- search city section-->
+    <div class="row min-vh-100 no-gutters">
+        <section id="search" class="col-lg-3 search-style d-flex flex-column">
+            <h4 class="search-title">Search for a City:</h4>
+            <form class="search-form">
+                <input id="text-input" class="text-input" type="text" name="search-weather">
+                <button id="search-btn" class="search-btn" type="submit" class="icon">🔍</button>
+            </form>
+            <div id="search-history" class="search-history-btns"></div>
+        </section>
+    </div>
+
+    <section id="city-info" class="col-md-9 city-info"></section>
+
+    <section id="forecast" class="forecast-cards "></section>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script> 
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
+
