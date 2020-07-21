@@ -1,9 +1,10 @@
 var cityInput = document.getElementById("city-input");
 var searchCity = document.getElementById("search-btn")
 
-function getCityName() {
+function getCityName(event) {
+    event.preventDefault();
     var cityName = cityInput.value;
-    console.log(cityName);
+    getWeather(cityName);
 }
 
 // function cleanCityInput() {
@@ -13,17 +14,28 @@ function getCityName() {
 // }
 
 var apiKey = "7d15ba9026d2e440d5540c6e58638b00";
-var apiUrl = "api.openweathermap.org/data/2.5/forecast?q=" + getCityName + "&appid=" + apiKey;
+
+
 
 //fetch to get city weather
 function getWeather(cityName) {
+    var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + apiKey;
     fetch(apiUrl).then(function (response) {
         console.log("response", response);
         return response.json();
     }).then(function(result) {
-        console.log('result', result.data)
-    })
-    
+        console.log('result', result.data);
+
+        // var weatherContainer = document.querySelector("#forecast");
+        // var img = document.createElement("img");
+
+        // img.setAttribute('src', result.data.image_url);
+        // weatherContainer.appendChild(img);
+    });
 }
 
+
+
+
+// getWeather();
 searchCity.addEventListener("click", getCityName)
