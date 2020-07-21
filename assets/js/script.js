@@ -2,7 +2,7 @@ var cityInput = document.getElementById("city-input");
 var searchCity = document.getElementById("search-btn")
 
 function getCityName() {
-    var cityName = cityInput.innerHtml.value;
+    var cityName = cityInput.value;
     console.log(cityName);
 }
 
@@ -12,12 +12,18 @@ function getCityName() {
 //     return cleanCity.join(" ").toLowerCase();
 // }
 
-// var apiKey = "7d15ba9026d2e440d5540c6e58638b00";
-// var apiUrl = "api.openweathermap.org/data/2.5/forecast?q=" + getCityName + "&appid=" + apiKey;
+var apiKey = "7d15ba9026d2e440d5540c6e58638b00";
+var apiUrl = "api.openweathermap.org/data/2.5/forecast?q=" + getCityName + "&appid=" + apiKey;
 
-// //fetch to get city weather
-// function getWeather(cityName) {
-//     var apiUrl = ''
-// }
+//fetch to get city weather
+function getWeather(cityName) {
+    fetch(apiUrl).then(function (response) {
+        console.log("response", response);
+        return response.json();
+    }).then(function(result) {
+        console.log('result', result.data)
+    })
+    
+}
 
-searchCity.addEventListener("click", cityInput)
+searchCity.addEventListener("click", getCityName)
