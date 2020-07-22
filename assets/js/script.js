@@ -29,19 +29,21 @@ function getWeather(cityName) {
     }).then(function (response) {
         console.log(response)
         var weatherImage = response.weather[0].icon;
-        var weatherUrl = "https://openweathermap.org/img/w" + weatherImage + ".png";
+        
+        var weatherUrl = "https://openweathermap.org/img/wn/" + weatherImage + ".png";
+        console.log(weatherImage);
 
         $("#weather-image").attr("src", weatherUrl);
-        $("#entered-city").html(response.name + " (' + todayDate + ' )");
+        $("#entered-city").html(response.name + "("  + todayDate + ")");
 
         $("#temp").text("Tempature: " + response.main.temp);
         $("#humidity").text("Humidity: " + response.main.humidity);
         $("#windspeed").text("WindSpeed: " + response.wind.speed);
 
-        var lat = response.coord.latitude;
-        var long = response.coord.longe;
+        var lat = response.coord.lat;
+        var long = response.coord.lon;
 
-        var apiUrl2 = "https://api.openweathermap.org/data/2.5/uvi?" + apiKey + "=" + lat + "&" + "lon=" + long;
+        var apiUrl2 = "https://api.openweathermap.org/data/2.5/uvi?appid=" + apiKey + "&lat=" +  lat + "&" + "lon=" + long;
         $.ajax({
             url: apiUrl2,
             method: "GET"
