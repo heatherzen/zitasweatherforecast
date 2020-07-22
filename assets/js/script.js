@@ -1,6 +1,6 @@
 var cityInput = document.getElementById("city-input");
 var searchCity = document.getElementById("search-btn");
-var todayDate = moment().format("LL, Mm");
+var todayDate = moment().format("MMMM Do YYYY");
 var cityArray = [];
 
 function getCityName(event) {
@@ -43,7 +43,7 @@ function getWeather(cityName) {
         var lat = response.coord.lat;
         var long = response.coord.lon;
 
-        var apiUrl2 = "https://api.openweathermap.org/data/2.5/uvi?appid=" + apiKey + "&lat=" +  lat + "&" + "lon=" + long;
+        var apiUrl2 = "https://api.openweathermap.org/data/2.5/uvi?appid=" + apiKey + "&lat=" +  lat + "&lon=" + long;
         $.ajax({
             url: apiUrl2,
             method: "GET"
